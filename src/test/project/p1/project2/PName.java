@@ -11,6 +11,7 @@ public class PName {
             System.out.println("Equal");
         else
             System.out.println("Not Equal");
+        System.out.println("Test");
     }
 
 }
