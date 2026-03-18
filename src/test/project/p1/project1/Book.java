@@ -1,4 +1,4 @@
-package test.project.p1.project;
+package test.project.p1.project1;
 
 public class Book {
     int id;

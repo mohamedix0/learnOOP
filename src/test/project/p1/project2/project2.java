@@ -1,6 +1,6 @@
 package test.project.p1.project2;
 
-public class PName {
+public class project2 {
 
     public static void main(String [] args) {
         Test o1 = new Test();

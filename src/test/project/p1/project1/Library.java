@@ -1,4 +1,4 @@
-package test.project.p1.project;
+package test.project.p1.project1;
 import java.util.Scanner;
 
 public class Library {
