@@ -1,20 +1,26 @@
 package test.project.p1.project2;
 
 public class Account {
+    static int createAccountNumber = 260;
     private int accountNumber;
     private String ownerName = "";
     private double balance = 0;
     private static Account accounts[] = new Account[100];
-    private static int accountCounter = 0;
+    static int accountCounter = 0;
 
-    Account(int accNumber,String name,double balance) {
-        this.accountNumber = accNumber;
+    Account(boolean forArray) {
+
+    }
+    Account(String name,double balance) {
+        this.accountNumber = createAccountNumber++;
         this.ownerName = name;
         this.balance = balance;
+        this.accounts[accountCounter] = new Account(true);
         this.accounts[accountCounter].accountNumber = this.accountNumber;
         this.accounts[accountCounter].balance = this.balance;
         this.accounts[accountCounter].ownerName = this.ownerName;
         accountCounter++;
+        createAccountNumber++;
     }
 
     private void updateAccountData() {
@@ -30,11 +36,13 @@ public class Account {
 
     public void deposit(double amount) {
         this.balance += amount;
-        System.out.println("Deposit " + amount + "$ is successful");
+        System.out.println("Deposit " + amount + "$ is successful" +
+                "\nYour balance is: " + this.balance + "$");
     }
     public void withdraw(double amount) {
         this.balance -= amount;
-        System.out.println("Withdraw " + amount + "$ is successful");
+        System.out.println("Withdraw " + amount + "$ is successful" +
+                "\nYour balance is: " + this.balance + "$");
     }
     public void transfer(Account to,double amount) {
         this.balance -= amount;
